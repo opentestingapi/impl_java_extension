@@ -1,9 +1,10 @@
-FROM opentesting:latest
+FROM openjdk:11-slim
 
-#add libs
-RUN mkdir app/libs2
-ADD lib app/libs2
-RUN for f in app/libs2/*; do echo ":/$f" >> app/jib-classpath-file; done
+#add ota
+RUN mkdir app
+ADD app/classes app/classes
+ADD app/lib app/lib
+ADD lib app/lib
 
-#add classes
-ADD src/main/java app/classes
+#entrypoint
+ENTRYPOINT ["java","-cp","app/lib/*:app/classes","org.opentesting.OpenTestingApplication"]

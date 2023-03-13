@@ -23,8 +23,8 @@ cd ..
 cd ..
 
 # extend the container
-docker build -t opentesting-extended:1.26 .
+podman build -t opentesting-extended:1.26 .
 
 # run the container
-docker rm -f $(docker ps -af name=opentesting-extended -q)
-docker run -p 50000:50000 --name=opentesting-extended opentesting-extended:1.26
+podman rm -f $(podman ps -af name=opentesting-extended -q)
+podman run -p 50000:50000 --name=opentesting-extended opentesting-extended:1.26
