@@ -23,8 +23,8 @@ cd ..
 cd ..
 
 # extend the container
-docker build -t opentesting-extended:1.26 .
+docker build -t opentesting-extended:1.28 .
 
 # run the container
 docker rm -f $(docker ps -af name=opentesting-extended -q)
-docker run -p 50000:50000 --name=opentesting-extended opentesting-extended:1.26
+docker run -p 50000:50000 --name=opentesting-extended opentesting-extended:1.28
