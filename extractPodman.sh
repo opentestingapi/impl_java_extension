@@ -1,5 +1,5 @@
 # extract data from container
 rm -rf app
-container_id=$(podman create ghcr.io/opentestingapi/opentesting:1.41)
+container_id=$(podman create ghcr.io/opentestingapi/opentesting:1.43)
 podman cp $container_id:/app .
 podman rm $container_id
